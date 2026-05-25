@@ -25,8 +25,10 @@ const PII_PATTERNS: Record<string, RegExp> = {
   EMAIL: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
 };
 
+// \d{1,5} limits house-number length to avoid polynomial backtracking on long
+// digit-only strings (ReDoS mitigation). Real house numbers are ≤5 digits.
 const ADDRESS_PATTERN =
-  /\d+\s[A-Z][a-z]+\s(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln)[^,.\n]*/gi;
+  /\d{1,5}\s[A-Z][a-z]+\s(?:Street|St|Avenue|Ave|Road|Rd|Drive|Dr|Lane|Ln)[^,.\n]{0,200}/gi;
 
 /**
  * Scan and redact PII from `content`.
