@@ -4,7 +4,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 import type { PerimeterConfig } from './types.js';
 
 const SQL_PATTERN = /(\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b|--|;)/gi;
-const SCRIPT_PATTERN = /(<script\b[^>]*>|javascript:|onerror=|onload=)/gi;
+const SCRIPT_PATTERN = /(<script\b[^>]*>|onerror=|onload=|\b(?:javascript|vbscript|data)\s*:)/gi;
 const HTML_PATTERN = /<[^>]+>/g;
 
 export interface PerimeterRequest {
@@ -24,9 +24,14 @@ export interface PerimeterResult {
 
 /** Sanitize string input by stripping HTML and script fragments. */
 export function sanitizeInput(str: string, maxLength = 2048): string {
-  const trimmed = str.slice(0, maxLength);
-  const withoutHtml = trimmed.replace(HTML_PATTERN, '');
-  return withoutHtml.replace(SCRIPT_PATTERN, '[blocked-script]').replace(SQL_PATTERN, '[blocked-sql]');
+  let sanitized = str.slice(0, maxLength);
+  let previous = '';
+  while (sanitized !== previous) {
+    previous = sanitized;
+    sanitized = sanitized.replace(HTML_PATTERN, '');
+    sanitized = sanitized.replace(SCRIPT_PATTERN, '');
+  }
+  return sanitized.replace(SQL_PATTERN, '[blocked-sql]');
 }
 
 /** Create an HMAC-SHA256 signature for a payload. */
