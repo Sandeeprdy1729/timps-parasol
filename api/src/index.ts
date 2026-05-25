@@ -16,6 +16,7 @@ app.addHook('preHandler', enforcePerimeter);
 await identityRoutes(app);
 await aiRoutes(app);
 app.register(async (secure) => {
+  secure.addHook('preHandler', enforcePerimeter);
   secure.addHook('preHandler', requireAuth);
   await vaultRoutes(secure);
   await auditRoutes(secure);

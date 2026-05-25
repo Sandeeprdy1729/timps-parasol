@@ -31,7 +31,13 @@ export function sanitizeInput(str: string, maxLength = 2048): string {
     sanitized = sanitized.replace(HTML_PATTERN, '');
     sanitized = sanitized.replace(SCRIPT_PATTERN, '');
   }
-  return sanitized.replace(SQL_PATTERN, '[blocked-sql]');
+  sanitized = sanitized.replace(SQL_PATTERN, '[blocked-sql]');
+  return sanitized
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 /** Create an HMAC-SHA256 signature for a payload. */
