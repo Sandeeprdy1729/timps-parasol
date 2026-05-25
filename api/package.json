@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@timps/parasol": "file:../packages/sdk",
-    "fastify": "^4.29.1"
+    "fastify": "^5.8.5"
   },
   "devDependencies": {
     "@types/node": "^22.15.30",
