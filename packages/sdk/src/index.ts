@@ -6,3 +6,11 @@ export * from './identity.js';
 export * from './vault.js';
 export * from './ai-shield.js';
 export * from './sentinel.js';
+
+// --- Agent-chaos hardening modules (AgentChaos paper) ---
+export * from './action-gate.js';
+export * from './stakeholder.js';
+export * from './pii-context-redactor.js';
+export * from './resource-budget.js';
+export * from './identity-anchor.js';
+export * from './social-pressure-detector.js';
