@@ -1,6 +1,7 @@
 {
   "name": "parasol-api",
   "version": "0.1.0",
+  "description": "Fastify API server exposing TIMPS-Parasol's security layers over HTTP.",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -15,5 +16,16 @@
   "devDependencies": {
     "@types/node": "^22.15.30",
     "typescript": "^5.8.3"
-  }
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeeprdy1729/timps-parasol.git",
+    "directory": "api"
+  },
+  "homepage": "https://github.com/Sandeeprdy1729/timps-parasol#readme",
+  "bugs": {
+    "url": "https://github.com/Sandeeprdy1729/timps-parasol/issues"
+  },
+  "author": "Sandeep Reddy (TIMPS) <https://timps-website.vercel.app/>"
 }

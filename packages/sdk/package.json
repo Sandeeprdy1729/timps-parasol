@@ -1,19 +1,47 @@
 {
   "name": "@timps/parasol",
   "version": "0.1.0",
+  "description": "Open-source 5-layer agentic security shield: injection detection, PII redaction, action gating, identity anchoring, resource budgets, audit.",
   "type": "module",
   "main": "dist/index.js",
   "types": "src/index.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
+    "bench": "tsx bench/run-benchmark.ts",
     "lint": "tsc -p tsconfig.json --noEmit",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "bench:charts": "tsx bench/generate-charts.ts",
+    "bench:holdout": "tsx bench/run-extended-benchmark.ts",
+    "bench:holdout:charts": "tsx bench/generate-extended-charts.ts"
   },
   "devDependencies": {
+    "@andersmyrmel/vard": "^1.2.1",
     "@types/node": "^22.15.30",
+    "tsx": "^4.23.13",
     "typescript": "^5.8.3",
     "vitest": "^2.1.9"
-  }
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeeprdy1729/timps-parasol.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://github.com/Sandeeprdy1729/timps-parasol#readme",
+  "bugs": {
+    "url": "https://github.com/Sandeeprdy1729/timps-parasol/issues"
+  },
+  "author": "Sandeep Reddy (TIMPS) <https://timps-website.vercel.app/>",
+  "keywords": [
+    "ai-security",
+    "prompt-injection",
+    "pii-redaction",
+    "agent-security",
+    "llm-safety",
+    "zero-trust"
+  ]
 }

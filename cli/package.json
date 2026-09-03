@@ -1,6 +1,7 @@
 {
   "name": "parasol-cli",
   "version": "0.1.0",
+  "description": "Command-line interface for TIMPS-Parasol.",
   "type": "module",
   "bin": {
     "parasol": "dist/index.js"
@@ -20,5 +21,16 @@
   "devDependencies": {
     "@types/node": "^22.15.30",
     "typescript": "^5.8.3"
-  }
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeeprdy1729/timps-parasol.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/Sandeeprdy1729/timps-parasol#readme",
+  "bugs": {
+    "url": "https://github.com/Sandeeprdy1729/timps-parasol/issues"
+  },
+  "author": "Sandeep Reddy (TIMPS) <https://timps-website.vercel.app/>"
 }

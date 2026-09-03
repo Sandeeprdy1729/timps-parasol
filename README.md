@@ -1,6 +1,6 @@
 # TIMPS-Parasol
 
-<img src="./timps_parasol_universal.svg" alt="TIMPS-Parasol Universal Security" />
+<img src="./timps-parasol-universal.png" alt="TIMPS-Parasol Universal Security" width="100%" />
 
 TIMPS-Parasol is a standalone universal security product built as a 5-layer open-source shield for apps, data, and AI interactions.
 

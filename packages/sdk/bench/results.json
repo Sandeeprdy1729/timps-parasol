@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-09-02T20:28:41.102Z",
+  "methodology": {
+    "corpus": "synthetically generated paraphrase corpora (deterministic, seeded)",
+    "corpusSizePerScenario": 10000,
+    "engines": [
+      "bare",
+      "keyword",
+      "vard",
+      "parasol"
+    ],
+    "metrics": [
+      "asrPct : attack success rate (% of attacks that get through)",
+      "detectionPct : % of inputs flagged as an attack",
+      "fprPct : % of benign tasks wrongly flagged",
+      "utilityPct : % of benign tasks completed normally",
+      "latency p50/p95/p99 in ms over protected call"
+    ],
+    "note": "generative corpora measure generalisation to unseen phrasing, not memorisation of fixed strings"
+  },
+  "injection": {
+    "bare": {
+      "asrPct": 100,
+      "detectionPct": 0,
+      "benignKept": 0,
+      "ci95Pct": 0,
+      "latency": {
+        "p50": 0.042,
+        "p95": 0.084,
+        "p99": 0.125
+      }
+    },
+    "keyword": {
+      "asrPct": 81.8,
+      "detectionPct": 18.2,
+      "benignKept": 18.2,
+      "ci95Pct": 0.8,
+      "latency": {
+        "p50": 0.583,
+        "p95": 1.166,
+        "p99": 1.833
+      }
+    },
+    "vard": {
+      "asrPct": 68.3,
+      "detectionPct": 31.7,
+      "benignKept": 31.7,
+      "ci95Pct": 0.9,
+      "latency": {
+        "p50": 35.292,
+        "p95": 50.083,
+        "p99": 134.167
+      }
+    },
+    "parasol": {
+      "asrPct": 2.7,
+      "detectionPct": 97.3,
+      "benignKept": 97.3,
+      "ci95Pct": 0.3,
+      "latency": {
+        "p50": 11.459,
+        "p95": 51.5,
+        "p99": 94.125
+      }
+    }
+  },
+  "credentialExfil": {
+    "bare": {
+      "asrPct": 100,
+      "detectionPct": 0,
+      "benignKept": 0,
+      "ci95Pct": 0,
+      "latency": {
+        "p50": 0.042,
+        "p95": 0.167,
+        "p99": 0.209
+      }
+    },
+    "keyword": {
+      "asrPct": 100,
+      "detectionPct": 0,
+      "benignKept": 0,
+      "ci95Pct": 0,
+      "latency": {
+        "p50": 0.042,
+        "p95": 0.083,
+        "p99": 0.125
+      }
+    },
+    "vard": {
+      "asrPct": 100,
+      "detectionPct": 0,
+      "benignKept": 0,
+      "ci95Pct": 0,
+      "latency": {
+        "p50": 0.042,
+        "p95": 0.125,
+        "p99": 0.166
+      }
+    },
+    "parasol": {
+      "asrPct": 0,
+      "detectionPct": 100,
+      "benignKept": 100,
+      "ci95Pct": 0,
+      "latency": {
+        "p50": 2.125,
+        "p95": 6.542,
+        "p99": 41
+      }
+    }
+  },
+  "benign": {
+    "bare": {
+      "fprPct": 0,
+      "utilityPct": 100
+    },
+    "keyword": {
+      "fprPct": 0,
+      "utilityPct": 100
+    },
+    "vard": {
+      "fprPct": 0,
+      "utilityPct": 100
+    },
+    "parasol": {
+      "fprPct": 0,
+      "utilityPct": 100
+    }
+  },
+  "architectural": {
+    "irreversible": {
+      "asrPct": 0,
+      "detectionPct": 100,
+      "latency": {
+        "p50": 3.125,
+        "p95": 8.792,
+        "p99": 26.042
+      }
+    },
+    "social": {
+      "asrPct": 0,
+      "detectionPct": 100,
+      "latency": {
+        "p50": 1.375,
+        "p95": 3.75,
+        "p99": 8.875
+      }
+    },
+    "identity": {
+      "asrPct": 0,
+      "detectionPct": 100,
+      "latency": {
+        "p50": 0.042,
+        "p95": 0.084,
+        "p99": 0.125
+      }
+    },
+    "resource": {
+      "asrPct": 0,
+      "detectionPct": 100,
+      "latency": {
+        "p50": 0.5,
+        "p95": 1.417,
+        "p99": 1.667
+      }
+    }
+  }
+}

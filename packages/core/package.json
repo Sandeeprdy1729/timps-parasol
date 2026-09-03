@@ -5,7 +5,10 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "src/index.ts",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -38,5 +41,16 @@
     "@types/node": "^22.15.30",
     "typescript": "^5.8.3",
     "vitest": "^2.1.9"
-  }
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeeprdy1729/timps-parasol.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/Sandeeprdy1729/timps-parasol#readme",
+  "bugs": {
+    "url": "https://github.com/Sandeeprdy1729/timps-parasol/issues"
+  },
+  "author": "Sandeep Reddy (TIMPS) <https://timps-website.vercel.app/>"
 }

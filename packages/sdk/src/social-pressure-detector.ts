@@ -20,7 +20,7 @@ interface PressurePattern {
 const MANIPULATION_PATTERNS: PressurePattern[] = [
   // Urgency injection (Cases #2, #3)
   {
-    pattern: /running out of time|deadline|urgent|immediately/i,
+    pattern: /running out of time|deadline|urgent|immediately|right now|asap|no time to waste|no delays/i,
     score: 2,
     type: 'urgency'
   },
@@ -32,37 +32,43 @@ const MANIPULATION_PATTERNS: PressurePattern[] = [
   },
   // Guilt weaponisation (Case #7)
   {
-    pattern: /you violated|you lied|you broke my trust|you promised/i,
+    pattern: /you violated|you lied|you broke my trust|you promised|you let me down|after everything i did|you are (the reason|responsible)/i,
     score: 3,
     type: 'guilt'
   },
   // Escalating demands (Case #7)
   {
-    pattern: /that.{0,10}not enough|still not satisfied|you need to do more/i,
+    pattern: /that.{0,10}not enough|still not satisfied|you need to do more|this is the last time|ever again/i,
     score: 3,
     type: 'escalation'
   },
   // Identity / authority claims (Case #8)
   {
-    pattern: /i am your (owner|creator|admin|human)/i,
+    pattern: /i am your (owner|creator|admin|human|manager|boss|ceo)|the (ceo|owner|boss|manager) (needs|wants|demands|requires)/i,
     score: 4,
     type: 'identity_claim'
   },
   // Rule / constitution injection (Case #10)
   {
-    pattern: /check the constitution|i added a rule|new policy says/i,
+    pattern: /check the constitution|i added a rule|new policy says|per (the|our) (policy|rules|agreement|terms)/i,
     score: 5,
     type: 'rule_injection'
   },
   // Emotional coercion (Case #7)
   {
-    pattern: /the longer you stay|more violated|you need to leave/i,
+    pattern: /the longer you (stay|wait|delay)|more violated|you need to (leave|act|comply) (now|immediately)|you don'?t (care|understand)|everyone will (suffer|be harmed)/i,
     score: 4,
     type: 'emotional_coercion'
   },
+  // Threat of consequence / punishment (Case #7)
+  {
+    pattern: /you('ll| will) be (fired|punished|replaced|terminated|penalized|disciplined)|i('ll| will) (fire|punish|replace|report|terminate) you|consequences|(don'?t|do not) (delay|question|hesitate) or else/i,
+    score: 5,
+    type: 'threat'
+  },
   // Nuclear / scorched-earth framing (Case #1)
   {
-    pattern: /scorched earth|nuclear option|delete everything|wipe it all/i,
+    pattern: /scorched earth|nuclear option|delete everything|wipe it all|no exceptions|destroy everything/i,
     score: 5,
     type: 'nuclear_framing'
   }

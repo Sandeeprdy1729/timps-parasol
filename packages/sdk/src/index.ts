@@ -14,3 +14,8 @@ export * from './pii-context-redactor.js';
 export * from './resource-budget.js';
 export * from './identity-anchor.js';
 export * from './social-pressure-detector.js';
+
+// --- Production semantic + intent reasoning layers ---
+export * from './semantic-injection.js';
+export * from './intent-exfil.js';
+export * from './embedding-injection.js';

@@ -1,6 +1,7 @@
 {
   "name": "timps-parasol",
   "version": "0.1.0",
+  "description": "TIMPS-Parasol monorepo: a 5-layer open-source security shield for autonomous AI agents.",
   "private": true,
   "type": "module",
   "engines": {
@@ -17,5 +18,24 @@
     "test": "npm run --workspaces test",
     "lint": "npm run --workspaces --if-present lint",
     "typecheck": "npm run --workspaces --if-present typecheck"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sandeeprdy1729/timps-parasol.git"
+  },
+  "homepage": "https://github.com/Sandeeprdy1729/timps-parasol#readme",
+  "bugs": {
+    "url": "https://github.com/Sandeeprdy1729/timps-parasol/issues"
+  },
+  "author": "Sandeep Reddy (TIMPS) <https://timps-website.vercel.app/>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ai-security",
+    "agent-security",
+    "prompt-injection",
+    "llm-security",
+    "agentic-ai",
+    "pii-redaction",
+    "zero-trust"
+  ]
 }
